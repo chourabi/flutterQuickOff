@@ -1,7 +1,5 @@
-import 'package:basics/pages/BottomNavigationPage.dart';
-import 'package:basics/pages/ChatApp.dart';
-import 'package:basics/pages/TodosPage.dart';
-import 'package:basics/pages/converterPage.dart';
+
+import 'package:basics/pages/SharedPrefs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:  BottomNavigationPage(),
+      home:  SharedPrefs()
     );
   }
 }
