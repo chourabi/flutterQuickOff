@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ffire/pages/AddNewNote.dart';
+import 'package:ffire/pages/Auth.dart';
 import 'package:ffire/pages/EditNote.dart';
+import 'package:ffire/pages/PublicNotes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +90,28 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-              )
+              ),
+              ListTile(
+                title: Text("Posdcast"),
+                subtitle: Text("check out other users feeds"),
+                trailing: Icon(Icons.mic),
+                onTap: (){
+                  Navigator.push(context, new MaterialPageRoute(builder: (context) => PublicFeeds(),));
+                },
+                
+              ),
+                       ListTile(
+                title: Text("Sign out"), 
+                trailing: Icon(Icons.exit_to_app),
+                onTap: (){
+                  _auth.signOut().then((value){
+  Navigator.push(context, new MaterialPageRoute(builder: (context) => SignInPage(),));
+                  });
+                
+                },
+                
+              ),
+              
             ],
           ),
         ),
